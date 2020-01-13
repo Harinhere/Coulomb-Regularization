@@ -1,4 +1,4 @@
-
+c Sample program to run the subroutine
       implicit double precision(a-h,o-z)
       parameter(nmax=20000)
       dimension tt(nmax),xx(nmax,3),vv(nmax,3)
@@ -9,23 +9,23 @@
 
 c   initialize
       rho1=10.
-	  z1=-500.
-	  phi1=0.
-	  vrho1=0.
-	  vz1=0.11
+      z1=-500.
+      phi1=0.
+      vrho1=0.
+      vz1=0.11
 c let's put in some lz
-	  vphi1=0.
+      vphi1=0.
 c zr is the residual charge
-	  zr=1.
+      zr=1.
 c f1 is the amplitude of the static field which is in -z direction
-	  f1=0.
+      f1=0.
 c f2 is the amplitude of the time rf field initially oriented in -z direction
-	  f2=0.05338
+      f2=0.05338
 c angular frequency of the rf field
-	  omega=0.0147
+      omega=0.0147
 c   coulomb initialize
-	  y(1)=rho1
-	  y(2)=vrho1
+    y(1)=rho1
+    y(2)=vrho1
 	  y(3)=z1
 	  y(4)=vz1
 	  y(5)=phi1
@@ -33,8 +33,8 @@ c   coulomb initialize
 c  field initialize
       fd(1)=zr
       fd(2)=f1
-	  fd(3)=f2
-	  fd(4)=omega
+      fd(3)=f2
+      fd(4)=omega
 
 	  t1=0.
 	  t2=-1.
@@ -286,7 +286,8 @@ C PROVIDES DERIVATIVES FOR RK4 STEPPER
 	  DYDT(7)=ALZ*(1./Y(1)**2+1./Y(3)**2)
       RETURN
       END
-
+c$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+c Adaptive-step size integration (Numerical recepies in Fortran)
 C REAL BULISCH-STOER 
       SUBROUTINE ODEINT(YSTART,NVAR,X1,X2,EPS,H1,HMIN,NOK,NBAD,DERIVS,
      1 RKQS)
